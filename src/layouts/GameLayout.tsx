@@ -8,13 +8,15 @@ interface Props {
   children: React.ReactNode;
 }
 
-const GameLayout = ({ children }: Props) => {
+const GameLayout = ({ children }: Props): JSX.Element => {
   return (
-    <ImageBackground style={{ width: "100%", height: "100%" }} source={BackgroundImg} resizeMode="cover">
-        <Center py={8} px={12} w="full" h="full" position="relative">
-        {children}
-        </Center>
-    </ImageBackground>
+    <>
+      <ImageBackground style={{ width: "100%", height: "100%" }} source={BackgroundImg} resizeMode="cover">
+          <Center py={8} px={12} w="full" h="full" position="relative">
+          {children}
+          </Center>
+      </ImageBackground>
+    </>
   );
 };
 

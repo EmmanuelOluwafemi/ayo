@@ -9,6 +9,8 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { NavigationContainer } from "@react-navigation/native";
 import Routes from "./src/config/routes";
+import { Provider } from "react-redux";
+import { store } from "./src/state/store";
 
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
 
@@ -51,10 +53,12 @@ export default function App() {
   }
 
   return (
-    <NativeBaseProvider config={dependencyConfig}>
-      <NavigationContainer>
-        <Routes />
-      </NavigationContainer>
-    </NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider config={dependencyConfig}>
+        <NavigationContainer>
+          <Routes />
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </Provider>
   );
 }
