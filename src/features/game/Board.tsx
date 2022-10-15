@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 import GameHeader from "./GameHeader";
 import GameMenu from "./GameMenu";
+import GameModal from "./GameModal";
 
 const Board = () => {
   const seeds = useSelector((state: RootState) => state.game.seedCounts);
@@ -41,7 +42,11 @@ const Board = () => {
         </HStack>
       </Box>
 
+      {/* game menu */}
       <GameMenu />
+
+      {/* game modal */}
+      <GameModal />
     </Center>
   );
 };
